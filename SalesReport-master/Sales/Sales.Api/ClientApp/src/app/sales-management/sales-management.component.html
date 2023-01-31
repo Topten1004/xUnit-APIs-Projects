@@ -1,0 +1,287 @@
+<div class="d-flex align-items-center flex-column justify-content-center h-100">
+    <h1 class="display-4">Sales</h1>
+</div>
+
+<div class="d-flex">
+    <div class="form-group col-md-3">
+        <label for="countryFilter">Filter By Country</label>
+        <select [(ngModel)]="listFiltered"
+                name="countryFilter"
+                class="form-control mr-2"
+                placeholder="Search By Country">
+            <option value="" selected></option>
+            <option *ngFor="let country of countries" [value]="country">
+                {{ country }}
+            </option>
+        </select>
+    </div>
+
+    <div class="form-group  col-md-3">
+        <label for="RangeData">Range Date</label>
+        <input type="text" name="RangeData" [(ngModel)]="rangeDate"
+               class="form-control "
+               [bsConfig]="{ dateInputFormat: 'DD-MM-YYYY' }"
+               bsDaterangepicker />
+    </div>
+
+    <div class="form-group  col-md-2">
+        <label for="btnSearch">&nbsp; </label>
+        <button name="btnSearch" class="btn btn-outline-primary form-control" (click)='filterSales(listFiltered, rangeDate,0,10)'>
+            <i class="fa fa-search"></i>&nbsp;
+            Search
+        </button>
+    </div>
+
+    <div class="form-group col-md-2">
+        <input type="file" #file placeholder="Choose file" (change)="uploadFile(file.files)" style="display:none;">
+        <button type="button" class="btn btn-success" (click)="file.click()">Upload File</button>
+    </div>
+    <div class="col-md-2">
+        <span class="upload" *ngIf="progress > 0">
+            {{progress}}%
+        </span>
+        <span class="upload" *ngIf="message">
+            {{message}}
+        </span>
+    </div>
+</div>
+
+<p-paginator [rows]=30 [totalRecords]="numberOfPages" (onPageChange)="changePage($event)"></p-paginator>
+<table class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th hidden>Id</th>
+            <th>Region</th>
+            <th>Country</th>
+            <th>Item Type</th>
+            <th>Order Date</th>
+            <th>Unit Sold</th>
+            <th>Unit Price</th>
+            <th>Total Cost</th>
+            <th>Total Profit</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody *ngIf="sales && sales.length">
+        <tr *ngFor="let sale of salesFiltered">
+            <td hidden>{{ sale.id }}</td>
+            <td>{{ sale.region }}</td>
+            <td>{{ sale.country }}</td>
+            <td>{{ sale.itemType }}</td>
+            <td>{{ sale.orderDate | DateTimeFormatPipe }}</td>
+            <td>{{ sale.unitsSold }}</td>
+            <td>{{ sale.unitPrice | MoneyEuroPipe }}</td>
+            <td>{{ sale.totalCost | MoneyEuroPipe }}</td>
+            <td>{{ sale.totalProfit | MoneyEuroPipe }}</td>
+            <td>
+                <div class="btn-group">
+                    <button class="btn btn-sm btn-primary"
+                            tooltip="Edit"
+                            (click)="editSale(sale, template)">
+                        <i class="fa fa-edit"></i>
+                    </button>
+                    <button class="btn btn-sm btn-danger"
+                            tooltip="Delete"
+                            (click)="deleteSale(sale,confirm)">
+                        <i class="fa fa-eraser"></i>
+                    </button>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+
+    <tfoot *ngIf="!sales">
+    <td colspan="7" class="text-center">
+        <h4>No sales yet =(</h4>
+    </td>
+    </tfoot>
+</table>
+
+<div bsModal
+     #template="bs-modal"
+     class="modal fade"
+     tabindex="-1"
+     role="dialog"
+     aria-labelledby="dialog-sizes-name1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 id="dialog-sizes-name1" class="modal-title pull-left">
+                    Large modal
+                </h4>
+                <button type="button"
+                        class="close pull-right"
+                        (click)="template.hide()"
+                        aria-label="Close">
+                    <span aria-hidden="true">&times; </span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="registerForm">
+                    <div class="form-row">
+                        <div class="form-group col-md-3">
+                            <label>Country</label>
+                            <input type="text"
+                                   class="form-control"
+                                   [ngClass]="{
+                  'is-invalid':
+                    registerForm.get('country').errors &&
+                    registerForm.get('country').touched
+                }"
+                                   formControlName="country" />
+                            <div *ngIf="
+                  registerForm.get('country').hasError('required') &&
+                  registerForm.get('country').touched
+                "
+                                 class="invalid-feedback">
+                                Country is mandatory.
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>Region</label>
+                            <input type="text"
+                                   class="form-control"
+                                   [ngClass]="{
+                  'is-invalid':
+                    registerForm.get('region').errors &&
+                    registerForm.get('region').touched
+                }"
+                                   formControlName="region" />
+                            <div *ngIf="
+                  registerForm.get('region').hasError('required') &&
+                  registerForm.get('region').touched
+                "
+                                 class="invalid-feedback">
+                                Region is mandatory.
+                            </div>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label>Item Type</label>
+                            <input type="text"
+                                   class="form-control"
+                                   [ngClass]="{
+                  'is-invalid':
+                    registerForm.get('itemType').errors &&
+                    registerForm.get('itemType').touched
+                }"
+                                   formControlName="itemType" />
+                            <div *ngIf="
+                  registerForm.get('itemType').hasError('required') &&
+                  registerForm.get('itemType').touched
+                "
+                                 class="invalid-feedback">
+                                Item Type is mandatory.
+                            </div>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label>Sales Channel</label>
+                            <input type="text"
+                                   class="form-control"
+                                   formControlName="salesChannel" />
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-1">
+                            <label>Priority</label>
+                            <input type="text"
+                                   class="form-control"
+                                   formControlName="orderPriority" />
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label>Ship Date</label>
+                            <input type="text"
+                                   class="form-control"
+                                   formControlName="shipDate"
+                                   [bsConfig]="{ dateInputFormat: 'DD-MM-YYYY' }"
+                                   bsDatepicker />
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label>Order Date</label>
+                            <input type="text"
+                                   class="form-control ui-datepicker"
+                                   formControlName="orderDate"
+                                   [bsConfig]="{ dateInputFormat: 'DD-MM-YYYY' }"
+                                   bsDatepicker />
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label>Unit Sold</label>
+                            <input type="text"
+                                   class="form-control"
+                                   formControlName="unitsSold" />
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label>Unit Price</label>
+                            <input type="text"
+                                   class="form-control"
+                                   formControlName="unitPrice" />
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-2">
+                            <label>Unit Cost</label>
+                            <input type="text"
+                                   class="form-control"
+                                   formControlName="unitCost" />
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label>Total Revenue</label>
+                            <input type="text"
+                                   class="form-control"
+                                   formControlName="totalRevenue" />
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label>Total Cost</label>
+                            <input type="text"
+                                   class="form-control"
+                                   formControlName="totalCost" />
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label>Total Profit</label>
+                            <input type="text"
+                                   class="form-control"
+                                   formControlName="totalProfit" />
+                        </div>
+                    </div>
+                </form>
+                <br />
+                <button class="btn btn-secondary" (click)="template.hide()">
+                    Close
+                </button>
+                <button class="btn btn-primary float-lg-right"
+                        [disabled]="!registerForm.valid"
+                        (click)="saveEdition(template)">
+                    Save
+                </button>
+                <br />
+                <br />
+            </div>
+            <div class="modal-footer"></div>
+        </div>
+    </div>
+</div>
+
+<div bsModal #confirm="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="dialog-sizes-name1">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title pull-left">
+                    Deleting Sale
+                </h4>
+                <button type="button" class="close pull-right" (click)="confirm.hide()" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>{{bodyDeleteSale}}</p>
+            </div>
+            <div class="modal-footer btn-group d-flex">
+                <button type="button" class="btn btn-outline-primary" (click)="confirm.hide()">
+                    No
+                </button>
+                <button type="button" class="btn btn-outline-danger" (click)="confirmDelete(confirm)">
+                    Yes
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

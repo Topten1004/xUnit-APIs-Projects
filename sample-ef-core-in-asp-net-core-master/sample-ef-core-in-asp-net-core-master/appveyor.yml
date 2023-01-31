@@ -1,0 +1,38 @@
+version: 1.0.{build}
+image: Visual Studio 2017
+skip_branch_with_pr: false
+
+# See: https://www.appveyor.com/docs/build-configuration/
+
+# 1. INIT
+init:
+  - cmd: git config --global core.autocrlf true
+  - cmd: dotnet --version # --info is more verbose but also helpful
+
+# 2. AppVeyor does a git clone and cd into the folder
+# 3. AppVeyor restores build cache
+
+# 4. INSTALL
+install:
+  - cmd: dotnet restore --verbosity minimal
+
+# 5. AppVeyor patches AssemblyInfo and csproj files
+# 6. AppVeyor modifies hosts files
+# 7. AppVeyor "starts services"
+
+# 8. BUILD
+build_script:
+  - cmd: dotnet build
+
+# 9. TEST
+test_script:
+  - dotnet test .\SampleAspNetWithEfCore.Tests\SampleAspNetWithEfCore.Tests.csproj --logger:"console;verbosity=normal"
+
+# 10. AppVeyor calls build_success webhooks
+
+# 11. PACKAGE
+# 12. DEPLOY
+
+# 13. FINALIZE (successful builds)
+# 14. FINALIZE (failed builds)
+# 15. FINALIZE (successes and failures)

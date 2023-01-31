@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.202
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleAspNetWithEfCore", "SampleAspNetWithEfCore\SampleAspNetWithEfCore.csproj", "{1212291F-56BD-4124-8691-9444CE739416}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleAspNetWithEfCore.Tests", "SampleAspNetWithEfCore.Tests\SampleAspNetWithEfCore.Tests.csproj", "{96BAF04F-A328-45A5-9302-9E71BCFEBB58}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{62FFCD6E-32C5-41A5-9C0F-30790B7D22E3}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		appveyor.yml = appveyor.yml
+		LICENSE.txt = LICENSE.txt
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1212291F-56BD-4124-8691-9444CE739416}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1212291F-56BD-4124-8691-9444CE739416}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1212291F-56BD-4124-8691-9444CE739416}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1212291F-56BD-4124-8691-9444CE739416}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96BAF04F-A328-45A5-9302-9E71BCFEBB58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96BAF04F-A328-45A5-9302-9E71BCFEBB58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96BAF04F-A328-45A5-9302-9E71BCFEBB58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96BAF04F-A328-45A5-9302-9E71BCFEBB58}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BB405AD6-A853-4D4D-848C-D1D834917E33}
+	EndGlobalSection
+EndGlobal

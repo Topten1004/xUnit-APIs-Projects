@@ -1,0 +1,49 @@
+{
+  "Files": [
+    {
+      "Id": "E:\\GitHub\\FullStack_Github\\CodeMazeGuides\\dotnet-testing\\TestingRepositoryPattern\\AccountOwnerServer\\wwwroot\\3rdpartylicenses.txt",
+      "PackagePath": "staticwebassets\\3rdpartylicenses.txt"
+    },
+    {
+      "Id": "E:\\GitHub\\FullStack_Github\\CodeMazeGuides\\dotnet-testing\\TestingRepositoryPattern\\AccountOwnerServer\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "E:\\GitHub\\FullStack_Github\\CodeMazeGuides\\dotnet-testing\\TestingRepositoryPattern\\AccountOwnerServer\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "E:\\GitHub\\FullStack_Github\\CodeMazeGuides\\dotnet-testing\\TestingRepositoryPattern\\AccountOwnerServer\\wwwroot\\main.8d06eac460cfb2ee.js",
+      "PackagePath": "staticwebassets\\main.8d06eac460cfb2ee.js"
+    },
+    {
+      "Id": "E:\\GitHub\\FullStack_Github\\CodeMazeGuides\\dotnet-testing\\TestingRepositoryPattern\\AccountOwnerServer\\wwwroot\\polyfills.e3ea17d938d5ba3a.js",
+      "PackagePath": "staticwebassets\\polyfills.e3ea17d938d5ba3a.js"
+    },
+    {
+      "Id": "E:\\GitHub\\FullStack_Github\\CodeMazeGuides\\dotnet-testing\\TestingRepositoryPattern\\AccountOwnerServer\\wwwroot\\runtime.b5d59dc9d79c9787.js",
+      "PackagePath": "staticwebassets\\runtime.b5d59dc9d79c9787.js"
+    },
+    {
+      "Id": "E:\\GitHub\\FullStack_Github\\CodeMazeGuides\\dotnet-testing\\TestingRepositoryPattern\\AccountOwnerServer\\wwwroot\\styles.1167dc02a4a3b18f.css",
+      "PackagePath": "staticwebassets\\styles.1167dc02a4a3b18f.css"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.AccountOwnerServer.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.AccountOwnerServer.props",
+      "PackagePath": "build\\AccountOwnerServer.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.AccountOwnerServer.props",
+      "PackagePath": "buildMultiTargeting\\AccountOwnerServer.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.AccountOwnerServer.props",
+      "PackagePath": "buildTransitive\\AccountOwnerServer.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

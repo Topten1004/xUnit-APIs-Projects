@@ -1,0 +1,15 @@
+E:\GitHub\FullStack_Github\CodeMazeGuides\dotnet-testing\TestingRepositoryPattern\Contracts\bin\Debug\net6.0\Contracts.deps.json
+E:\GitHub\FullStack_Github\CodeMazeGuides\dotnet-testing\TestingRepositoryPattern\Contracts\bin\Debug\net6.0\Contracts.dll
+E:\GitHub\FullStack_Github\CodeMazeGuides\dotnet-testing\TestingRepositoryPattern\Contracts\bin\Debug\net6.0\Contracts.pdb
+E:\GitHub\FullStack_Github\CodeMazeGuides\dotnet-testing\TestingRepositoryPattern\Contracts\bin\Debug\net6.0\Entities.dll
+E:\GitHub\FullStack_Github\CodeMazeGuides\dotnet-testing\TestingRepositoryPattern\Contracts\bin\Debug\net6.0\Entities.pdb
+E:\GitHub\FullStack_Github\CodeMazeGuides\dotnet-testing\TestingRepositoryPattern\Contracts\obj\Debug\net6.0\Contracts.csproj.AssemblyReference.cache
+E:\GitHub\FullStack_Github\CodeMazeGuides\dotnet-testing\TestingRepositoryPattern\Contracts\obj\Debug\net6.0\Contracts.GeneratedMSBuildEditorConfig.editorconfig
+E:\GitHub\FullStack_Github\CodeMazeGuides\dotnet-testing\TestingRepositoryPattern\Contracts\obj\Debug\net6.0\Contracts.AssemblyInfoInputs.cache
+E:\GitHub\FullStack_Github\CodeMazeGuides\dotnet-testing\TestingRepositoryPattern\Contracts\obj\Debug\net6.0\Contracts.AssemblyInfo.cs
+E:\GitHub\FullStack_Github\CodeMazeGuides\dotnet-testing\TestingRepositoryPattern\Contracts\obj\Debug\net6.0\Contracts.csproj.CoreCompileInputs.cache
+E:\GitHub\FullStack_Github\CodeMazeGuides\dotnet-testing\TestingRepositoryPattern\Contracts\obj\Debug\net6.0\Contracts.csproj.CopyComplete
+E:\GitHub\FullStack_Github\CodeMazeGuides\dotnet-testing\TestingRepositoryPattern\Contracts\obj\Debug\net6.0\Contracts.dll
+E:\GitHub\FullStack_Github\CodeMazeGuides\dotnet-testing\TestingRepositoryPattern\Contracts\obj\Debug\net6.0\refint\Contracts.dll
+E:\GitHub\FullStack_Github\CodeMazeGuides\dotnet-testing\TestingRepositoryPattern\Contracts\obj\Debug\net6.0\Contracts.pdb
+E:\GitHub\FullStack_Github\CodeMazeGuides\dotnet-testing\TestingRepositoryPattern\Contracts\obj\Debug\net6.0\ref\Contracts.dll
